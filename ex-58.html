@@ -1,0 +1,70 @@
+<!-- یک برنامه جاوا اسکریپت بنویسید تا مجموع آرایه ای از اعداد صحیح را محاسبه کند. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+
+        div {
+            background-color: beige;
+            width: 25%;
+            padding: 2.5%;
+            margin-left: 35%;
+            margin-top: 30vh;
+            border: 1px solid rosybrown;
+            border-radius: 5px;
+        }
+
+        input {
+            padding: 5px;
+            background-color: darkslateblue;
+            border: 1px solid darkslateblue;
+            color: lightgray;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+
+        <p>Our array is number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p>
+
+        <p id="demo"></p>
+
+        <input onclick="call()" type="button" value="Get the sum of the numbers in the array">
+
+    </div>
+
+    <script>
+
+        function call() {
+            document.getElementById("demo").innerHTML = `The sum of the numbers is ${addition()}`;
+        }
+
+        const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        let sum = 0;
+        function addition() {
+
+            if (number.length) {
+                sum += +number[0];
+                number.splice(0, 1);
+                addition();
+            }
+
+            return sum;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
